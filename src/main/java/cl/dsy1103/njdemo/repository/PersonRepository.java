@@ -1,14 +1,12 @@
 package cl.dsy1103.njdemo.repository;
 
-import org.springframework.data.repository.Repository;
+// import org.springframework.data.repository.Repository;
+// import java.util.Optional;
+import org.springframework.data.jpa.repository.JpaRepository;
 
 import cl.dsy1103.njdemo.model.Person;
 
-import java.util.Optional;
+// public interface PersonRepository extends Repository<Person, Long> {
+public interface PersonRepository extends JpaRepository<Person, Long> {
 
-public interface PersonRepository extends Repository<Person, Long> {
-
-    Person save(Person person);
-
-    Optional<Person> findById(long id);
 }
