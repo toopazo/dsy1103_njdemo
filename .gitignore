@@ -38,3 +38,4 @@ out/
 
 # Custom files to be ignored
 secrets.properties
+.env
