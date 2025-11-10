@@ -7,6 +7,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
+// import com.github.javafaker.Faker;
+// import java.util.Locale;
+
 import cl.dsy1103.njdemo.model.Person;
 import cl.dsy1103.njdemo.repository.PersonRepository;
 
@@ -21,8 +24,15 @@ public class NjdemoApplication {
 	CommandLineRunner runner(PersonRepository repository) {
 		return args -> {
 
+			// Faker faker = new Faker(Locale.forLanguageTag("es-CL"));
+
 			Person person = new Person();
-			person.setName("John");
+			// person.setName(faker.name().fullName());
+			// person.setAge(faker.number().numberBetween(18, 65));
+			// person.setRole(faker.job().title());
+			person.setName("Juan Perez");
+			person.setAge(30);
+			person.setRole("Poet");
 
 			repository.save(person);
 			Person saved = repository.findById(person.getId()).orElseThrow(NoSuchElementException::new);

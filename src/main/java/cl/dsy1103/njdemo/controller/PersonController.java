@@ -4,6 +4,7 @@ import java.util.stream.Collectors;
 import java.util.Optional;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -27,6 +28,7 @@ import cl.dsy1103.njdemo.repository.PersonRepository;
 import cl.dsy1103.njdemo.assembler.PersonModelAssembler;
 
 @RestController
+@CrossOrigin(origins = "http://localhost:3000/") // Allows requests from localhost:3000
 public class PersonController {
     private final PersonRepository repository;
     private final PersonModelAssembler assembler;
